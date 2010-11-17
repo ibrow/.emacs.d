@@ -12,11 +12,11 @@
 (set-face-attribute 'default nil :height 100)
 
 
-;; Indentation
+;; Indentation, we use no tabs and 3 spaces
 (setq-default indent-tabs-mode nil)
-(setq standard-indent 4)
-(setq tab-width 4)
-(setq c-default-style "k&r" c-basic-offset 4)
+(setq standard-indent 3)
+(setq tab-width 3)
+(setq c-default-style "k&r" c-basic-offset 3)
 
 
 ;; iSpell key bindings
@@ -38,6 +38,18 @@
 (require 'ido)
 (ido-mode t)
 (setq ido-enable-flex-matching t)
+
+
+;; Auto Complete
+(add-to-list 'load-path "~/.emacs.d/vendors/auto-complete")
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/vendors/auto-complete/dict")
+(ac-config-default)
+(global-auto-complete-mode t)
+(define-key ac-complete-mode-map "\t" 'ac-expand)
+(define-key ac-complete-mode-map "\r" 'ac-complete)
+(define-key ac-complete-mode-map "\M-n" 'ac-next)
+(define-key ac-complete-mode-map "\M-p" 'ac-previous)
 
 ;; CSS
 (autoload 'css-mode "css-mode")
