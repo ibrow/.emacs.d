@@ -1,3 +1,9 @@
 [submodule "vendors/auto-complete"]
 	path = vendors/auto-complete
 	url = https://github.com/m2ym/auto-complete.git
+[submodule "vendors/twittering-mode"]
+	path = vendors/twittering-mode
+	url = https://github.com/hayamiz/twittering-mode.git
+[submodule "vendors/emacs-w3m"]
+	path = vendors/emacs-w3m
+	url = https://github.com/tankrim/emacs-w3m.git

@@ -9,8 +9,12 @@
 (setq color-theme-is-global t)
 (color-theme-calm-forest)
 ;; Font Size
-(set-face-attribute 'default nil :height 100)
+(set-face-attribute 'default nil :height 120)
 
+;; Remove Gui
+(scroll-bar-mode -1)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
 
 ;; Indentation, we use no tabs and 3 spaces
 (setq-default indent-tabs-mode nil)
@@ -76,3 +80,18 @@
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
 (add-hook 'lua-mode-hook 'turn-on-font-lock)
 (add-hook 'lua-mode-hook 'hs-minor-mode)
+
+;; Twittering mode, if it takes my fancy
+;; http://www.emacswiki.org/emacs/TwitteringMode
+(add-to-list 'load-path "~/.emacs.d/vendors/twittering-mode")
+(require 'twittering-mode)
+
+;; Web Browsing with W3M
+;; https://github.com/tankrim/emacs-w3m.git
+(add-to-list 'load-path "~/.emacs.d/vendors/emacs-w3m")
+(require 'w3m-load)
+
+;(setq browse-url-browser-function 'w3m-browse-url)
+;(autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
+;;; optional keyboard short-cut
+;(global-set-key "\C-xm" 'browse-url-at-point)
