@@ -5,7 +5,7 @@
 
 ;; nice theme, get more with M-x color-theme-select
 (require 'color-theme)
-(color-theme-initialize)
+;(color-theme-initialize)
 (setq color-theme-is-global t)
 (color-theme-calm-forest)
 ;; Font Size
@@ -69,3 +69,10 @@
 (define-key php-mode-map '[M-S-up] 'flymake-goto-prev-error)
 (define-key php-mode-map '[M-S-down] 'flymake-goto-next-error)
 (add-hook 'php-mode-user-hook 'turn-on-font-lock)
+
+;; LUA mode for editing Awesome Window Manager files
+(require 'lua-mode)
+(setq auto-mode-alist (cons '("\\.lua$" . lua-mode) auto-mode-alist))
+(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
+(add-hook 'lua-mode-hook 'turn-on-font-lock)
+(add-hook 'lua-mode-hook 'hs-minor-mode)
