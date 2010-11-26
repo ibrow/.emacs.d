@@ -34,6 +34,12 @@
 (add-to-list 'auto-mode-alist '("/mutt" . post-mode))
 (add-hook 'post-mode-hook 'turn-on-flyspell)
 
+
+; F3 to insert filename into minibuffer
+; from http://stackoverflow.com/questions/455345/in-emacs-how-to-insert-file-name-in-shell-command
+(define-key minibuffer-local-map [f3]
+  (lambda() (interactive) (insert (buffer-file-name (nth 1 (buffer-list))))))
+
 ;; Use iBuffer, and make it default
 (require 'ibuffer) 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
