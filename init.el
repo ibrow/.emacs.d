@@ -28,6 +28,12 @@
 (global-set-key [f5] 'ispell-buffer)
 (global-set-key [f6] 'ispell-word)
 
+
+;; Emacs is the mail editor in Mutt
+(require 'post)
+(add-to-list 'auto-mode-alist '("/mutt" . post-mode))
+(add-hook 'post-mode-hook 'turn-on-flyspell)
+
 ;; Use iBuffer, and make it default
 (require 'ibuffer) 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
