@@ -52,9 +52,14 @@
 (require 'rob-w3m)
 
 ;; Customisation I've "borrowed" from elsewhere
-(require 'stater-kit-js)
+(require 'starter-kit-js)
 
 
+;; recentf stuff
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
 ;; Use iBuffer, and make it default
 (require 'ibuffer) 
