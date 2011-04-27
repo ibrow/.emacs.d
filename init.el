@@ -7,7 +7,7 @@
 
 ;; nice theme, get more with M-x color-theme-select
 (require 'color-theme)
-(color-theme-initialize)
+;;(color-theme-initialize) ;; I don't understand why this is needed on some machines and not others!
 (setq color-theme-is-global t)
 (color-theme-calm-forest)
 ;; Font Size
@@ -50,6 +50,7 @@
 (require 'rob-css)
 (require 'rob-lua)
 (require 'rob-w3m)
+(require 'rob-org)
 
 ;; Customisation I've "borrowed" from elsewhere
 (require 'starter-kit-js)
