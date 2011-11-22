@@ -1,5 +1,4 @@
-;;; rob-php.el --- Rob's Customisations for PHP mode
-;; PHP
+;;; rob-php.el --- Rob's Customisations for PHP Mode
 (require 'php-mode)
 (require 'flymake)
 (add-hook 'php-mode-hook (lambda() (flymake-mode 1)))
