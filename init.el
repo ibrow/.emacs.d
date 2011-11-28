@@ -20,7 +20,7 @@
 
 ;; nice theme, get more with M-x color-theme-select
 (require 'color-theme)
-;;(color-theme-initialize) ;; I don't understand why this is needed on some machines and not others!
+(color-theme-initialize) ;; I don't understand why this is needed on some machines and not others!
 (setq color-theme-is-global t)
 (color-theme-calm-forest)
 ;; Font Size
@@ -42,6 +42,9 @@
 (setq backup-inhibited t)
 ; disable auto save
 (setq auto-save-default nil)
+
+; Magit
+(require 'magit)
 
 ; tramp
 ;(require 'tramp)

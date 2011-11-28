@@ -13,3 +13,6 @@
 [submodule "vendors/jade-mode"]
 	path = vendors/jade-mode
 	url = https://github.com/brianc/jade-mode.git
+[submodule "vendors/magit"]
+	path = vendors/magit
+	url = https://github.com/magit/magit.git
