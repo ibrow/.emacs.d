@@ -9,5 +9,7 @@
 (define-key ac-complete-mode-map "\M-n" 'ac-next)
 (define-key ac-complete-mode-map "\M-p" 'ac-previous)
 
+(eval-after-load "auto-complete" '(add-to-list 'ac-modes 'espresso-mode))
+
 (provide 'rob-ac)
 ;;; rob-ac.el ends here

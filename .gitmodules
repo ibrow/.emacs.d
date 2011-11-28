@@ -6,7 +6,10 @@
 	url = https://github.com/hayamiz/twittering-mode.git
 [submodule "vendors/emacs-w3m"]
 	path = vendors/emacs-w3m
-	url = https://github.com/id774-2/emacs-w3m
+	url = https://github.com/sjatkinson/emacs-w3m.git
 [submodule "vendors/org-mode"]
 	path = vendors/org-mode
 	url = git://orgmode.org/org-mode.git
+[submodule "vendors/jade-mode"]
+	path = vendors/jade-mode
+	url = https://github.com/brianc/jade-mode.git
