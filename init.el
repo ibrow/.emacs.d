@@ -24,7 +24,7 @@
 (setq color-theme-is-global t)
 (color-theme-calm-forest)
 ;; Font Size
-;(set-face-attribute 'default nil :height 120)
+(set-face-attribute 'default nil :height 110)
 
 ;; Remove Gui
 (scroll-bar-mode -1)
@@ -67,6 +67,12 @@
 (define-key minibuffer-local-map [f3]
   (lambda() (interactive) (insert (buffer-file-name (nth 1 (buffer-list))))))
 
+; too many buffers are called the same thing
+; see
+; http://emacs-fu.blogspot.com/2009/11/making-buffer-names-unique.html
+(require 'uniquify) 
+(setq 
+  uniquify-buffer-name-style 'post-forward)
 
 
 ;; Rob's Customisations
@@ -85,4 +91,28 @@
 
 ; for scheme
 ;(require 'quack)
-(setq-default scheme-program-name "guile")
+;(setq-default scheme-program-name "guile")
+
+(defvar no-easy-keys-minor-mode-map (make-keymap) 
+  "no-easy-keys-minor-mode keymap.")
+(let ((f (lambda (m)
+           `(lambda () (interactive) 
+              (message (concat "No! use " ,m " instead."))))))
+  (dolist (l '(("<left>" . "C-b") ("<right>" . "C-f") ("<up>" . "C-p")
+               ("<down>" . "C-n")
+               ("<C-left>" . "M-b") ("<C-right>" . "M-f") ("<C-up>" . "M-{")
+               ("<C-down>" . "M-}")
+               ("<M-left>" . "M-b") ("<M-right>" . "M-f") ("<M-up>" . "M-{")
+               ("<M-down>" . "M-}")
+               ("<delete>" . "C-d") ("<C-delete>" . "M-d")
+               ("<M-delete>" . "M-d") ("<next>" . "C-v") ("<C-next>" . "M-x <")
+               ("<prior>" . "M-v") ("<C-prior>" . "M-x >") 
+               ("<home>" . "C-a") ("<C-home>" . "M->")
+               ("<C-home>" . "M-<") ("<end>" . "C-e") ("<C-end>" . "M->")))
+    (define-key no-easy-keys-minor-mode-map
+      (read-kbd-macro (car l)) (funcall f (cdr l)))))
+(define-minor-mode no-easy-keys-minor-mode
+  "A minor mode that disables the arrow-keys, pg-up/down, delete
+  and backspace."  t " no-easy-keys"
+  'no-easy-keys-minor-mode-map :global t)
+(no-easy-keys-minor-mode 1)

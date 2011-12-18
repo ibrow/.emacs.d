@@ -16,3 +16,6 @@
 [submodule "vendors/magit"]
 	path = vendors/magit
 	url = https://github.com/magit/magit.git
+[submodule "vendors/yasnippet"]
+	path = vendors/yasnippet
+	url = https://github.com/capitaomorte/yasnippet.git
