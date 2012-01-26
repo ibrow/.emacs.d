@@ -89,6 +89,14 @@
 (require 'rob-ido)
 (require 'rob-twitter)
 
+
+; coffeescript
+(add-to-list 'load-path "~/.emacs.d/vendors/coffee-mode")
+(require 'coffee-mode)
+(add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
+(add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
+
+
 ; for scheme
 ;(require 'quack)
 ;(setq-default scheme-program-name "guile")
