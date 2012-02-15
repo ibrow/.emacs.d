@@ -4,7 +4,7 @@
 
 ;; fonts
 ;;(set-default-font "-Misc-Fixed-Medium-R-Normal--10-100-75-75-C-60-ISO8859-1")
-(set-default-font "-unknown-DejaVu Sans Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1");
+(set-default-font "-unknown-DejaVu Sans Mono-normal-normal-normal-*-13-*-*-*-m-0-iso10646-1");
 (modify-frame-parameters nil '((wait-for-wm . nil)))
 
 ;; fix flyspell problem
@@ -43,7 +43,13 @@
 ; disable auto save
 (setq auto-save-default nil)
 
+; buffer names
+(require 'uniquify) 
+(setq 
+ uniquify-buffer-name-style 'post-forward)
+
 ; Magit
+(add-to-list 'load-path "~/.emacs.d/vendors/magit")
 (require 'magit)
 
 ; tramp
@@ -123,4 +129,6 @@
   "A minor mode that disables the arrow-keys, pg-up/down, delete
   and backspace."  t " no-easy-keys"
   'no-easy-keys-minor-mode-map :global t)
-(no-easy-keys-minor-mode 1)
+;; actually this is getting really annoying, by default off
+(no-easy-keys-minor-mode 0)
+
