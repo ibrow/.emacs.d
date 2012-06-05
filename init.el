@@ -81,6 +81,8 @@
 (setq 
   uniquify-buffer-name-style 'post-forward)
 
+(setq org-mobile-directory "/home/rob/Dropbox/MobileOrg")
+
 
 ;; Rob's Customisations
 (require 'rob-ac)
@@ -102,3 +104,16 @@
 ; for scheme
 ;(require 'quack)
 ;(setq-default scheme-program-name "guile")
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(org-agenda-files (quote ("~/Dropbox/Org/ibrow-migrate.org" "~/Dropbox/Org/_archive.org" "~/Dropbox/Org/travel.org" "~/Dropbox/Org/Jabbakam/mobile.org" "~/Dropbox/Org/_gtd.org")))
+ '(safe-local-variable-values (quote ((standard-indent . 3) (c-hanging-comment-ender-p) (espresso-indent-level . 2) (espresso-indent-level . 3)))))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
